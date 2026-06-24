@@ -10,7 +10,7 @@
 // =============================================
 (function initLoader() {
   const loader = document.getElementById('loader');
-  const fill   = document.getElementById('loaderFill');
+  const fill = document.getElementById('loaderFill');
   let progress = 0;
 
   const tick = setInterval(() => {
@@ -67,7 +67,7 @@ function initLenis() {
 // CUSTOM CURSOR
 // =============================================
 function initCursor() {
-  const cursor   = document.getElementById('cursor');
+  const cursor = document.getElementById('cursor');
   const follower = document.getElementById('cursorFollower');
 
   if (!cursor || !follower) return;
@@ -79,14 +79,14 @@ function initCursor() {
     curX = e.clientX;
     curY = e.clientY;
     cursor.style.left = curX + 'px';
-    cursor.style.top  = curY + 'px';
+    cursor.style.top = curY + 'px';
   });
 
   function animateFollower() {
     folX += (curX - folX) * 0.08;
     folY += (curY - folY) * 0.08;
     follower.style.left = folX + 'px';
-    follower.style.top  = folY + 'px';
+    follower.style.top = folY + 'px';
     requestAnimationFrame(animateFollower);
   }
   animateFollower();
@@ -116,7 +116,7 @@ function initScrollProgress() {
 // =============================================
 function initNavbar() {
   const navbar = document.getElementById('navbar');
-  const links  = document.querySelectorAll('.nav-link');
+  const links = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
 
   window.addEventListener('scroll', () => {
@@ -147,7 +147,7 @@ function initNavbar() {
 // HAMBURGER / MOBILE MENU
 // =============================================
 function initMobileMenu() {
-  const hamburger  = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-link, .mobile-cta');
 
@@ -177,8 +177,8 @@ function initMagneticButtons() {
   magnetics.forEach(el => {
     el.addEventListener('mousemove', (e) => {
       const rect = el.getBoundingClientRect();
-      const cx = rect.left + rect.width  / 2;
-      const cy = rect.top  + rect.height / 2;
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
       const dx = (e.clientX - cx) * 0.25;
       const dy = (e.clientY - cy) * 0.25;
       el.style.transform = `translate(${dx}px, ${dy}px)`;
@@ -199,11 +199,11 @@ function initTiltCards() {
 
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
-      const rect  = card.getBoundingClientRect();
-      const x     = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y     = (e.clientY - rect.top)  / rect.height - 0.5;
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
       const tiltX = y * -10;
-      const tiltY = x *  10;
+      const tiltY = x * 10;
       card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(8px)`;
     });
     card.addEventListener('mouseleave', () => {
@@ -223,7 +223,7 @@ function initParticles() {
   let W, H;
 
   function resize() {
-    W = canvas.width  = window.innerWidth;
+    W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
   resize();
@@ -271,10 +271,10 @@ function initParticles() {
 // =============================================
 function initHeroParallax() {
   const portrait = document.getElementById('portraitWrap');
-  const blobs    = document.querySelectorAll('.blob');
+  const blobs = document.querySelectorAll('.blob');
 
   window.addEventListener('mousemove', (e) => {
-    const x = (e.clientX / window.innerWidth  - 0.5) * 2;
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
     const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
     if (portrait) {
@@ -315,9 +315,9 @@ function initCounters() {
     const start = performance.now();
 
     function update(now) {
-      const elapsed  = now - start;
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const ease     = 1 - Math.pow(1 - progress, 4);
+      const ease = 1 - Math.pow(1 - progress, 4);
       counter.textContent = Math.round(ease * target);
       if (progress < 1) requestAnimationFrame(update);
     }
@@ -334,9 +334,9 @@ function initScrollCounters() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.querySelectorAll('[data-count]').forEach(el => {
-          const target   = parseInt(el.getAttribute('data-count'));
+          const target = parseInt(el.getAttribute('data-count'));
           const duration = 1600;
-          const start    = performance.now();
+          const start = performance.now();
           const run = (now) => {
             const p = Math.min((now - start) / duration, 1);
             el.textContent = Math.round((1 - Math.pow(1 - p, 4)) * target);
@@ -376,8 +376,8 @@ function initSkillBars() {
 // VIDEO FILTER TABS
 // =============================================
 function initVideoFilters() {
-  const filterBtns  = document.querySelectorAll('.filter-btn');
-  const videoCards  = document.querySelectorAll('.video-card');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const videoCards = document.querySelectorAll('.video-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -388,12 +388,12 @@ function initVideoFilters() {
       videoCards.forEach(card => {
         const cat = card.getAttribute('data-category');
         if (filter === 'all' || cat === filter) {
-          card.style.opacity    = '1';
-          card.style.transform  = '';
+          card.style.opacity = '1';
+          card.style.transform = '';
           card.style.pointerEvents = 'auto';
         } else {
-          card.style.opacity    = '0.25';
-          card.style.transform  = 'scale(0.96)';
+          card.style.opacity = '0.25';
+          card.style.transform = 'scale(0.96)';
           card.style.pointerEvents = 'none';
         }
       });
@@ -405,15 +405,15 @@ function initVideoFilters() {
 // TESTIMONIAL SLIDER
 // =============================================
 function initTestimonialSlider() {
-  const track    = document.getElementById('testimonialTrack');
-  const prevBtn  = document.getElementById('sliderPrev');
-  const nextBtn  = document.getElementById('sliderNext');
+  const track = document.getElementById('testimonialTrack');
+  const prevBtn = document.getElementById('sliderPrev');
+  const nextBtn = document.getElementById('sliderNext');
   const dotsWrap = document.getElementById('sliderDots');
 
   if (!track) return;
 
   const slides = track.querySelectorAll('.testimonial-slide');
-  let current  = 0;
+  let current = 0;
   let autoTimer;
 
   // Build dots
@@ -440,7 +440,7 @@ function initTestimonialSlider() {
   nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
 
   function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
-  function resetAuto()  { clearInterval(autoTimer); startAuto(); }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
   startAuto();
 
   // Touch/swipe support
@@ -475,7 +475,7 @@ const projectData = [
     name: 'Portfolio Website',
     desc: 'An Awwwards-inspired personal portfolio with GSAP animations, Lenis smooth scroll, custom cursor, and cinematic section transitions.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Lenis'],
-    demo: '#', github: '#', image: 'portfolio_thumb.png',
+    demo: 'https://portfolioitsrohan.netlify.app/', github: 'https://github.com/rohanmhabdi18/Rohan-s-Portfolio', image: 'portfolio t.png',
   },
   {
     name: 'AI Writing Tool',
@@ -498,18 +498,18 @@ const projectData = [
 ];
 
 function initProjectModals() {
-  const overlay   = document.getElementById('modalOverlay');
-  const closeBtn  = document.getElementById('modalClose');
+  const overlay = document.getElementById('modalOverlay');
+  const closeBtn = document.getElementById('modalClose');
   const modalBody = document.getElementById('modalBody');
 
   document.querySelectorAll('.project-card').forEach((card) => {
     card.addEventListener('click', () => {
-      const idx  = parseInt(card.getAttribute('data-project'));
+      const idx = parseInt(card.getAttribute('data-project'));
       const data = projectData[idx];
       if (!data) return;
 
       modalBody.innerHTML = `
-        ${data.image 
+        ${data.image
           ? '<div style="width:100%; height:240px; margin-bottom:24px; border-radius:12px; border:1px solid var(--border); overflow:hidden;"><img src="' + data.image + '" style="width:100%; height:100%; object-fit:cover;" alt="' + data.name + '"></div>'
           : '<div class="modal-icon" style="font-size:52px;color:rgba(139,92,246,0.4);margin-bottom:20px;text-align:center;"><i class="fa-solid ' + data.icon + '"></i></div>'
         }
@@ -549,7 +549,7 @@ function initProjectModals() {
 // VIDEO MODAL
 // =============================================
 function initVideoModal() {
-  const overlay  = document.getElementById('videoModalOverlay');
+  const overlay = document.getElementById('videoModalOverlay');
   const closeBtn = document.getElementById('videoModalClose');
 
   if (!overlay) return;
@@ -590,7 +590,7 @@ function initContactForm() {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     // Check built-in HTML5 validation (required fields)
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -606,49 +606,49 @@ function initContactForm() {
     icon.className = 'fa-solid fa-spinner fa-spin';
 
     const templateParams = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        service: document.getElementById("service") ? document.getElementById("service").value : "",
-        budget: document.getElementById("budget") ? document.getElementById("budget").value : "",
-        message: document.getElementById("message").value
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      service: document.getElementById("service") ? document.getElementById("service").value : "",
+      budget: document.getElementById("budget") ? document.getElementById("budget").value : "",
+      message: document.getElementById("message").value
     };
 
     try {
-        // Email to you
-        await emailjs.send(
-            "service_fhkn98q",
-            "template_nsqqxjn",
-            templateParams
-        );
+      // Email to you
+      await emailjs.send(
+        "service_fhkn98q",
+        "template_nsqqxjn",
+        templateParams
+      );
 
-        // Auto reply to visitor
-        await emailjs.send(
-            "service_fhkn98q",
-            "template_kqblmoh",
-            templateParams
-        );
+      // Auto reply to visitor
+      await emailjs.send(
+        "service_fhkn98q",
+        "template_kqblmoh",
+        templateParams
+      );
 
-        // Success UI
-        span.textContent = 'Message Sent Successfully!';
-        icon.className = 'fa-solid fa-check';
-        btn.style.background = 'linear-gradient(135deg,#22c55e,#16a34a)';
-        
-        form.reset();
+      // Success UI
+      span.textContent = 'Message Sent Successfully!';
+      icon.className = 'fa-solid fa-check';
+      btn.style.background = 'linear-gradient(135deg,#22c55e,#16a34a)';
+
+      form.reset();
     } catch (error) {
-        console.error(error);
-        
-        // Error UI
-        span.textContent = 'Failed to send message.';
-        icon.className = 'fa-solid fa-xmark';
-        btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
+      console.error(error);
+
+      // Error UI
+      span.textContent = 'Failed to send message.';
+      icon.className = 'fa-solid fa-xmark';
+      btn.style.background = 'linear-gradient(135deg,#ef4444,#dc2626)';
     } finally {
-        // Reset the form state after some time
-        setTimeout(() => {
-          span.textContent = 'Send Message';
-          icon.className = 'fa-solid fa-paper-plane';
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 5000);
+      // Reset the form state after some time
+      setTimeout(() => {
+        span.textContent = 'Send Message';
+        icon.className = 'fa-solid fa-paper-plane';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 5000);
     }
   });
 }
