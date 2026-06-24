@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Premium portfolio of a Web Developer & Video Editor — building fast websites and crafting visual stories." />
+  <title>Rohan Mhabdi — Web Dev & Video Editor</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/svg+xml" href="Brand_Fevicon_Circle.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="loading">
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <img src="brand_logo.webp" alt="Rohan Mhabdi Logo" class="loader-logo-img" />
+      <div class="loader-bar">
+        <div class="loader-fill" id="loaderFill"></div>
+      </div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" data-magnetic>
+        <img src="brand_logo.webp" alt="Logo" class="logo-img" />
+        <span class="logo-text">Rohan Mhabdi</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Web Projects</a>
+        <a href="#videos" class="nav-link">Video Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-nav" data-magnetic>Hire Me</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Web Projects</a>
+    <a href="#videos" class="mobile-link">Video Portfolio</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary mobile-cta">Hire Me</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <!-- Background FX -->
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+      <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal-up">
+          <span class="dot"></span> Available for Freelance
+        </div>
+
+        <h1 class="hero-heading">
+          <span class="line-wrap"><span class="line reveal-up delay-1">BUILDING</span></span>
+          <span class="line-wrap"><span class="line reveal-up delay-2">WEBSITES.</span></span>
+          <span class="line-wrap"><span class="line reveal-up delay-3 gradient-text">CRAFTING</span></span>
+          <span class="line-wrap"><span class="line reveal-up delay-4 gradient-text">STORIES.</span></span>
+        </h1>
+
+        <p class="hero-sub reveal-up delay-5">
+          I help brands, businesses, and creators grow through<br>
+          high-performance websites and engaging video content.
+        </p>
+
+        <div class="hero-actions reveal-up delay-6">
+          <a href="#projects" class="btn btn-primary" data-magnetic>
+            <span>View Portfolio</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-ghost" data-magnetic>
+            <span>Hire Me</span>
+          </a>
+        </div>
+
+        <div class="hero-stats reveal-up delay-7">
+          <div class="hero-stat">
+            <span class="stat-num" data-count="3">0</span><span>+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-count="1">0</span><span>+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="stat-num" data-count="1">0</span><span>+</span>
+            <span class="stat-label">Yrs Exp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-up delay-3">
+        <div class="portrait-wrap" id="portraitWrap">
+          <div class="portrait-ring"></div>
+          <div class="portrait-card">
+            <img src="brand_logo.webp" alt="Rohan Mhabdi Logo" class="portrait-img" />
+          </div>
+          <div class="portrait-badge badge-1">
+            <i class="fa-solid fa-code"></i>
+            <span>Web Developer</span>
+          </div>
+          <div class="portrait-badge badge-2">
+            <i class="fa-solid fa-film"></i>
+            <span>Video Editor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual" data-reveal>
+          <div class="about-img-wrap">
+            <div class="about-img-card glass">
+              <div class="about-img-placeholder">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div class="about-img-overlay">
+                <span class="tag">Open to Work</span>
+              </div>
+            </div>
+            <div class="about-float-card glass">
+              <i class="fa-solid fa-code"></i>
+              <div>
+                <span class="float-num">3+</span>
+                <span class="float-label">Projects Built</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <h2 class="section-heading" data-reveal style="white-space: nowrap; margin-bottom: 16px;">About <span
+              class="gradient-text">Me</span></h2>
+
+          <p class="about-text" data-reveal>
+            I'm Rohan Mhabdi — A Freelance Front-end web developer and video editor based in Mumbai. I combine technical
+            precision with creative storytelling to build digital experiences that leave an impression.
+          </p>
+          <p class="about-text" data-reveal>
+            Whether it's a blazing-fast travel booking system or a cinematic brand video, I focus on the details that
+            turn
+            good work into great work.
+          </p>
+
+          <div class="about-stats" data-reveal>
+            <div class="stat-card glass">
+              <span class="stat-big" data-count="3">0</span><span class="stat-plus">+</span>
+              <span class="stat-name">Projects Completed</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-big" data-count="3">0</span><span class="stat-plus">+</span>
+              <span class="stat-name">Happy Clients</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-big" data-count="1">0</span><span class="stat-plus">+</span>
+              <span class="stat-name">Years Experience</span>
+            </div>
+            <div class="stat-card glass">
+              <span class="stat-big" data-count="30">0</span><span class="stat-plus">+</span>
+              <span class="stat-name">Videos Edited</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERTISE ============ -->
+  <section class="expertise section" id="expertise">
+    <div class="container">
+      <h2 class="section-heading center" data-reveal>My <span class="gradient-text">Expertise</span></h2>
+
+      <div class="expertise-grid">
+        <div class="expertise-card glass tilt-card" data-reveal>
+          <div class="card-glow"></div>
+          <div class="expertise-icon">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>Creating fast, responsive, and modern websites using current web technologies that convert visitors into
+            customers.</p>
+          <div class="expertise-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+
+        <div class="expertise-card glass tilt-card" data-reveal>
+          <div class="card-glow"></div>
+          <div class="expertise-icon">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <h3>Video Editing</h3>
+          <p>Creating engaging video content that increases retention and audience engagement — from short-form reels to
+            full brand films.</p>
+          <div class="expertise-tags">
+            <span>Davinci Resolve</span><span>After Effects</span>
+            <span>CapCut</span><span>Motion Graphics</span><span>Color Grading</span><span>Photoshop</span>
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WEB PROJECTS ============ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <h2 class="section-heading" data-reveal>WEB DEVELOPMENT <span class="gradient-text">PROJECTS</span></h2>
+      <p class="section-sub" data-reveal>A selection of websites and applications I've built.</p>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <div class="project-card" data-reveal data-project="0">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-calendar-check"></i></div>
+            <img src="towardspoint_thumb.jpg" alt="TowardsPoint Thumbnail" class="project-thumbnail"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 5;" />
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">HTML</span><span class="tag-chip">CSS</span><span
+                class="tag-chip">JavaScript</span><span class="tag-chip">Firebase</span><span class="tag-chip">Netlify
+              </span>
+            </div>
+            <h3>TowardsPoint - Travel Management System</h3>
+            <p>Full booking platform with scheduling, payments, and notifications.</p>
+            <div class="project-links">
+              <a href="https://towardspoint12.netlify.app/" class="btn-link" data-magnetic><i
+                  class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="https://github.com/rohanmhabdi18/TowardsP" class="btn-link" data-magnetic><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal data-project="1">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">React</span><span class="tag-chip">Node.js</span><span
+                class="tag-chip">MongoDB</span>
+            </div>
+            <h3>E-Commerce Platform</h3>
+            <p>Full-stack store with cart, auth, payments, and admin dashboard.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link" data-magnetic><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="#" class="btn-link" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal data-project="2">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-user-astronaut"></i></div>
+            <img src="portfolio_thumb.png" alt="Portfolio Thumbnail" class="project-thumbnail"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 5;" />
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">HTML</span><span class="tag-chip">CSS</span><span class="tag-chip">GSAP</span>
+            </div>
+            <h3>Portfolio Website</h3>
+            <p>Award-worthy portfolio with cinematic animations and smooth scroll.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link" data-magnetic><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="#" class="btn-link" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal data-project="3">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-robot"></i></div>
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">React</span><span class="tag-chip">OpenAI</span><span class="tag-chip">API</span>
+            </div>
+            <h3>AI Writing Tool</h3>
+            <p>Content generation app powered by GPT with real-time streaming output.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link" data-magnetic><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="#" class="btn-link" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal data-project="4">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-building"></i></div>
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">HTML</span><span class="tag-chip">CSS</span><span class="tag-chip">JS</span>
+            </div>
+            <h3>Business Landing Page</h3>
+            <p>High-converting landing page for a SaaS product with animated sections.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link" data-magnetic><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="#" class="btn-link" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-reveal data-project="5">
+          <div class="project-img">
+            <div class="project-img-placeholder"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="project-overlay">
+              <span class="project-view"><i class="fa-solid fa-eye"></i> View Details</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags-row">
+              <span class="tag-chip">React</span><span class="tag-chip">D3.js</span><span
+                class="tag-chip">Firebase</span>
+            </div>
+            <h3>Analytics Dashboard</h3>
+            <p>Real-time data visualization dashboard with charts, filters, and reports.</p>
+            <div class="project-links">
+              <a href="#" class="btn-link" data-magnetic><i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                Demo</a>
+              <a href="#" class="btn-link" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO PORTFOLIO ============ -->
+  <section class="videos section" id="videos">
+    <div class="container">
+      <h2 class="section-heading" data-reveal>VIDEO EDITING <span class="gradient-text">PORTFOLIO</span></h2>
+      <p class="section-sub" data-reveal>Selected editing work and motion content.</p>
+
+      <!-- Filter Tabs -->
+      <div class="video-filters" data-reveal>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="youtube">YouTube</button>
+        <button class="filter-btn" data-filter="reels">Reels</button>
+        <button class="filter-btn" data-filter="ads">Ads</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
+      </div>
+
+      <div class="videos-masonry" id="videosMasonry">
+
+        <div class="video-card tall" data-category="motion" data-reveal
+          data-url="https://youtube.com/shorts/9UB0LUdbKxQ?si=SkYStNE7TXMFFAQi">
+          <div class="video-thumb" style="padding: 0;">
+            <iframe
+              src="https://www.youtube.com/embed/9UB0LUdbKxQ?autoplay=1&mute=1&loop=1&playlist=9UB0LUdbKxQ&controls=0&showinfo=0&rel=0&modestbranding=1"
+              style="width: 100%; height: 100%; position: absolute; top: 0; left: 0; border: none; pointer-events: none;"
+              allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">Motion Graphics</span>
+            <h4>Motion Graphics Reel</h4>
+            <p>Creative vertical reel showcasing motion effects.</p>
+          </div>
+        </div>
+
+        <div class="video-card" data-category="youtube" data-reveal>
+          <div class="video-thumb">
+            <div class="video-thumb-placeholder"><i class="fa-brands fa-youtube"></i></div>
+            <div class="video-overlay">
+              <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">YouTube</span>
+            <h4>Brand Documentary</h4>
+            <p>8:42 • A cinematic brand story for a fitness startup.</p>
+          </div>
+        </div>
+
+        <div class="video-card tall" data-category="reels" data-reveal>
+          <div class="video-thumb">
+            <div class="video-thumb-placeholder"><i class="fa-brands fa-instagram"></i></div>
+            <div class="video-overlay">
+              <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">Reels</span>
+            <h4>Product Reveal Reel</h4>
+            <p>0:30 • High-energy product launch reel.</p>
+          </div>
+        </div>
+
+        <div class="video-card" data-category="ads" data-reveal>
+          <div class="video-thumb">
+            <div class="video-thumb-placeholder"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="video-overlay">
+              <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">Ad</span>
+            <h4>Fashion Campaign Ad</h4>
+            <p>0:15 • Vertical ad creative for Meta campaign.</p>
+          </div>
+        </div>
+
+        <div class="video-card tall" data-category="youtube" data-reveal>
+          <div class="video-thumb">
+            <div class="video-thumb-placeholder"><i class="fa-solid fa-clapperboard"></i></div>
+            <div class="video-overlay">
+              <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">YouTube</span>
+            <h4>Tech Review Video</h4>
+            <p>12:15 • Sleek product review with motion overlays.</p>
+          </div>
+        </div>
+
+        <div class="video-card" data-category="reels" data-reveal>
+          <div class="video-thumb">
+            <div class="video-thumb-placeholder"><i class="fa-brands fa-tiktok"></i></div>
+            <div class="video-overlay">
+              <div class="play-btn"><i class="fa-solid fa-play"></i></div>
+            </div>
+          </div>
+          <div class="video-info">
+            <span class="video-cat">Shorts</span>
+            <h4>Travel Montage Short</h4>
+            <p>0:45 • Cinematic travel reel with sync cuts.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <h2 class="section-heading center" data-reveal>My <span class="gradient-text">Skills</span></h2>
+
+      <div class="skills-grid">
+        <div class="skills-col" data-reveal>
+          <h3 class="skills-col-heading"><i class="fa-solid fa-code"></i> Development</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-brands fa-html5"
+                    style="margin-right: 8px; color: var(--white-40);"></i>HTML</span><span>90%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-brands fa-css3-alt"
+                    style="margin-right: 8px; color: var(--white-40);"></i>CSS</span><span>80%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-brands fa-js"
+                    style="margin-right: 8px; color: var(--white-40);"></i>JavaScript</span><span>50%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="50"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-col" data-reveal>
+          <h3 class="skills-col-heading"><i class="fa-solid fa-film"></i> Editing</h3>
+          <div class="skill-bars">
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-solid fa-wand-magic-sparkles"
+                    style="margin-right: 8px; color: var(--white-40);"></i>DaVinci Resolve</span><span>92%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="92"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-solid fa-clapperboard"
+                    style="margin-right: 8px; color: var(--white-40);"></i>After Effects</span><span>70%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-solid fa-bezier-curve"
+                    style="margin-right: 8px; color: var(--white-40);"></i>Motion Graphics</span><span>50%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="50"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-solid fa-palette"
+                    style="margin-right: 8px; color: var(--white-40);"></i>Color Grading</span><span>60%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="60"></div>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label"><span><i class="fa-solid fa-scissors"
+                    style="margin-right: 8px; color: var(--white-40);"></i>CapCut</span><span>98%</span></div>
+              <div class="skill-bar">
+                <div class="skill-fill" data-width="98"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials section" id="testimonials" style="display: none;">
+    <div class="container">
+      <h2 class="section-heading center" data-reveal>Client <span class="gradient-text">Testimonials</span></h2>
+
+      <div class="testimonial-slider" data-reveal>
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass">
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p>"Rohan built us an e-commerce site that outperformed our previous one by 3x in conversions. The
+                attention to detail and speed of delivery was impressive."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Priya Sharma</strong>
+                  <span>CEO, StyleAura</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass">
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p>"The video edits Rohan delivered for our YouTube channel doubled our watch time in two months.
+                Cinematic quality at an incredible price."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Rahul Nair</strong>
+                  <span>YouTuber, TechWithRahul</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass">
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p>"Working with Rohan felt effortless. He understood our brand voice instantly and delivered a landing
+                page that turned heads at our product launch."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Sarah Klein</strong>
+                  <span>Founder, NovaSaaS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-slide">
+            <div class="testimonial-card glass">
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p>"The reel content Rohan edited for our Instagram campaign hit 2M views organically. Pure talent with a
+                strong creative eye."</p>
+              <div class="testimonial-author">
+                <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                  <strong>Ananya Patel</strong>
+                  <span>Brand Manager, LuxeWear</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="slider-btn prev" id="sliderPrev" aria-label="Previous"><i
+              class="fa-solid fa-arrow-left"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn next" id="sliderNext" aria-label="Next"><i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-copy" data-reveal>
+          <h2 class="section-heading">Let's Build Something <span class="gradient-text">Amazing</span></h2>
+          <p class="contact-text">Have a project in mind? I'd love to hear about it. Drop me a message and I'll get back
+            to you within 24 hours.</p>
+
+          <div class="contact-info">
+            <a href="mailto:[rohanmhabdi18@gmail.com]" class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>rohanmhabdi18@gmail.com</span>
+            </a>
+            <a href="tel:+919356864391" class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 9356864391</span>
+            </a>
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Mumbai, India</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/rohanmhabdi18/rohanmhabdi18" class="social-link" aria-label="GitHub"
+              data-magnetic><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/rohan-mhabdi-0956553b6/" class="social-link" aria-label="LinkedIn"
+              data-magnetic><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/its_rohan_editz/?hl=en" class="social-link" aria-label="Instagram"
+              data-magnetic><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@itsrohaneditz05/shorts" class="social-link" aria-label="YouTube"
+              data-magnetic><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap glass" data-reveal>
+          <form class="contact-form" id="contactForm" novalidate>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                  <option value="">Select a service</option>
+                  <option>Web Development</option>
+                  <option>Video Editing</option>
+                  <option>Both</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select budget</option>
+                  <option>Under ₹10k</option>
+                  <option>₹10k – ₹30k</option>
+                  <option>₹30k – ₹1L</option>
+                  <option>₹1L+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" data-magnetic>
+              <span>Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-bottom"
+        style="text-align: center; color: var(--white-40); font-size: 14px; padding-top: 10px;">
+        <p>&copy; 2026 Rohan Mhabdi. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal glass" id="projectModal">
+      <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal-overlay" id="videoModalOverlay">
+    <div class="modal video-modal glass" id="videoModal">
+      <button class="modal-close" id="videoModalClose"><i class="fa-solid fa-xmark"></i></button>
+      <div class="video-embed-wrap">
+        <div class="video-embed-placeholder">
+          <i class="fa-solid fa-play-circle"></i>
+          <p>Connect your YouTube/Vimeo URL here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
