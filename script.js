@@ -475,7 +475,7 @@ const projectData = [
     name: 'Portfolio Website',
     desc: 'An Awwwards-inspired personal portfolio with GSAP animations, Lenis smooth scroll, custom cursor, and cinematic section transitions.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'GSAP', 'Lenis'],
-    demo: 'https://portfolioitsrohan.netlify.app/', github: 'https://github.com/rohanmhabdi18/Rohan-s-Portfolio', image: 'portfolio t.png',
+    demo: 'https://itsrohanmhabdi.netlify.app/', github: 'https://github.com/rohanmhabdi18/Rohan-s-Portfolio', image: 'portfolio t.png',
   },
   {
     name: 'AI Writing Tool',
