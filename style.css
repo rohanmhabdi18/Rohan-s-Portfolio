@@ -287,6 +287,13 @@ ul {
   background-clip: text;
 }
 
+.gradient-text-light {
+  background: linear-gradient(180deg, #ffffff 20%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
