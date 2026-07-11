@@ -697,6 +697,33 @@ function initAnchorScroll() {
 }
 
 // =============================================
+// HOVER PLAY VIDEOS
+// =============================================
+function initHoverPlayVideos() {
+  document.querySelectorAll('.hover-play-card').forEach(card => {
+    const img = card.querySelector('.vlog-preview-img');
+    const container = card.querySelector('.iframe-container');
+    const videoId = card.getAttribute('data-video-id');
+    
+    if(!img || !container || !videoId) return;
+    
+    card.addEventListener('mouseenter', () => {
+      if(!container.innerHTML) {
+        container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1" style="width: 100%; height: 100%; border: none; pointer-events: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      }
+      img.style.opacity = '0';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      img.style.opacity = '1';
+      setTimeout(() => {
+         container.innerHTML = '';
+      }, 300);
+    });
+  });
+}
+
+// =============================================
 // INIT ALL
 // =============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -719,4 +746,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initAnchorScroll();
   initGSAP();
+  initHoverPlayVideos();
 });

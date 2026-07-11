@@ -1413,6 +1413,7 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 220px;
   gap: 20px;
+  grid-auto-flow: dense;
 }
 
 .video-card {
@@ -1427,6 +1428,10 @@ ul {
 
 .video-card.tall {
   grid-row: span 2;
+}
+
+.video-card.wide {
+  grid-column: span 2;
 }
 
 .video-card:hover {
